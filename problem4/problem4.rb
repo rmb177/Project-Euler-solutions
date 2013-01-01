@@ -1,3 +1,5 @@
+# Find the largest palindrome made from the product of two 3-digit numbers.
+
 a = 999
 highestPalindrome = 0
 
@@ -18,5 +20,5 @@ while a > 0
    a -= 1
 end
 
-print "\n\n", highestPalindrome, "\n\n"
-   
+print "\n", highestPalindrome, "\n\n"
+
