@@ -11,15 +11,13 @@ while current_divisor < SQRT_COMPOSITE:
    if flags[current_divisor]:
       if 0 == COMPOSITE % current_divisor:
          largest_prime = current_divisor
-      #
-   
+      
+      # Don't have to check any other multiples of current divisor
       index = current_divisor * 2
       while index < SQRT_COMPOSITE:
          flags[index] = False
          index += current_divisor
-      #
-   #
+         
    current_divisor += 1
-#
 
 print "\n", largest_prime, "\n"
