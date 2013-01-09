@@ -2,16 +2,16 @@
 # do not exceed four million, find the sum of the even-valued terms.
 
 sum = 0
-prevTerm = 1
-currentTerm = 2
+prev_term = 1
+current_term = 2
 
-while currentTerm < 4000000:
-   if 0 == currentTerm % 2:
-      sum += currentTerm
+while current_term < 4000000:
+   if 0 == current_term % 2:
+      sum += current_term
    #
-   nextTerm = prevTerm + currentTerm
-   prevTerm = currentTerm
-   currentTerm = nextTerm
+   next_term = prev_term + current_term
+   prev_term = current_term
+   current_term = next_term
 #
 print "\n"
 print sum
