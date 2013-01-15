@@ -1,24 +1,16 @@
 # Find the largest palindrome made from the product of two 3-digit numbers.
+highest_palindrome = 0
 
-a = 999
-highestPalindrome = 0
-
-while a > 0:
-   b = 999
-   while b > 0:
+for a in reversed(range(999)):
+   for b in reversed(range(999)):
+      
       product = a * b
       
-      if product > highestPalindrome:
+      if product > highest_palindrome:
          if str(product) == str(product)[::-1]:
-            highestPalindrome = product
-         #
-      #
+            highest_palindrome = product
       else:
          break
-      #
-      b -= 1
-   #
-   a -= 1
-#
 
-print "\n", highestPalindrome, "\n\n"
+print "\n", highest_palindrome, "\n\n"
+
