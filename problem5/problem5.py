@@ -1,16 +1,20 @@
 # What is the smallest number divisible by each of the numbers 1 to 20?
+# Only need to check 11-19 since lower numbers are multiples of upper
+# half. Also don't, need to check 20 since we're iterating on multiples
+# of 20
 
-currentTest = 20
-foundIt = False
+current_test = 20
+found_it = false
 
-while not foundIt:
-   foundIt = True
+while not found_it:
+   found_it = True
    for i in range(11,20):
-      if (currentTest % i) != 0:
+      if (current_test % i) != 0:
          foundIt = False
+         break
       #
    #
-   currentTest += 20
+   current_test += 20
 #
 
-print "\n", currentTest, "\n\n"
+print "\n", current_test, "\n\n"
