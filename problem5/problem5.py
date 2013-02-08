@@ -4,13 +4,13 @@
 # of 20
 
 current_test = 20
-found_it = false
+found_it = False
 
 while not found_it:
    found_it = True
    for i in range(11,20):
       if (current_test % i) != 0:
-         foundIt = False
+         found_it = False
          break
       #
    #
