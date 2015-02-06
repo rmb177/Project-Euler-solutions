@@ -3,18 +3,19 @@
 # half. Also don't, need to check 20 since we're iterating on multiples
 # of 20
 
-current_test = 20
+current_test = 0
 found_it = false
 
 while !found_it
    found_it = true
+   current_test += 20
    for i in 11..19  
       if (current_test % i) != 0
          found_it = false
          break
       end
    end
-   current_test += 20
+   break if found_it
 end
 
 print "\n", current_test, "\n\n"
