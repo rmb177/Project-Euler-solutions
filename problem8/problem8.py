@@ -18,8 +18,8 @@ digit_as_string = ("73167176531330624919225119674426574742355349194934"
                    "05886116467109405077541002256983155200055935729725"
                    "71636269561882670428252483600823257530420752963450")
 
-current_digits = [0, 0, 0, 0, 0]
-current_products = [0, 0, 0, 0, 0]
+current_digits = [0] * 13
+current_products = [0] * 13
 max_product = 0
 
 for c in digit_as_string:
@@ -31,8 +31,8 @@ for c in digit_as_string:
   current_digits.pop(0)
   current_products.append(1)
 
-  for i in range(5):
-      current_products[i] *= current_digits[4]
+  for i in range(13):
+      current_products[i] *= current_digits[12]
 
 max_remaining = max(current_products)
 if max_remaining > max_product:
