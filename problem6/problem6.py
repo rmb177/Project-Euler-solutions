@@ -4,18 +4,18 @@ def square_of_sum():
    """
    Use number pairs to avoid looping over list
    """
-   sum = 0
-   if up_to % 2 == 0:
-      sum = ((1 + up_to) * (up_to / 2)) ** 2
-   else:
-      sum = ((1 + up_to) * (up_to / 2)  + (up_to / 2)) ** 2
-   return sum
+   return (up_to * (up_to + 1) / 2) ** 2
 
 
 def sum_of_squares():
    """
    This probably isn't really any faster than using ** operator
    but finding squares by using increasing odd numbers.
+   # 1 4 9 16 25
+   #  4 =  1 + 3
+   #  9 =  4 + 5
+   # 16 =  9 + 7
+   # 25 = 16 + 9
    """
    sum = 0
    odd_increment = 1

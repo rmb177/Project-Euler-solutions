@@ -2,17 +2,16 @@ $up_to = 100
 
 # Use number pairs to avoid looping over list
 def square_of_sum
-  sum = 0
-  if $up_to % 2 == 0
-    sum = ((1 + $up_to) * ($up_to / 2)) ** 2
-  else
-    sum = ((1 + $up_to) * ($up_to / 2)  + ($up_to / 2)) ** 2
-  end
-  sum
+  ($up_to * ($up_to + 1) / 2) ** 2
 end
 
 # This probably isn't really any faster than using ** operator
 # but finding squares by using increasing odd numbers
+# 1 4 9 16 25
+#  4 =  1 + 3
+#  9 =  4 + 5
+# 16 =  9 + 7
+# 25 = 16 + 9 
 def sum_of_squares
   sum = 0
   odd_increment = 1
