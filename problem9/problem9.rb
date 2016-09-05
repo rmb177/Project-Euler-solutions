@@ -1,26 +1,24 @@
 answer = 0
-start_digit = 333
+sequence = 333..1
 found = false
 
-while !found
-  (start_digit..1000).each { |x|
-    (start_digit + 1..1000).each { |y|
-      (start_digit + 2..1000).each { |z|
-        if x + y + z == 1000 and x**2 + y**2 == z**2
-          found = true
-          answer = x * y * z
-          puts x
-          puts y
-          puts z
-        end
-	 	  break if found or x + y + z > 1000
-	 	  }
-	 	  break if found
-	  }
-	  break if found
-  }
+(sequence.first).downto(sequence.last).each { |a|
+  b = a + 1
+  c = 1000 - a - b
+  
+  while b < c 
+    if (a**2 + b**2 == c**2)
+      found = true
+      answer = a * b * c
+      puts "#{a}, #{b}, #{c}"
+      break
+    end
+    
+    b += 1
+    c -= 1
+  end
+  
   break if found
-  start_digit = start_digit - 1
-end
+}
 
 puts answer

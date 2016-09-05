@@ -1,25 +1,21 @@
 answer = 0
-start_digit = 333
 found = False
 
-while not found:
-  for x in xrange(start_digit, 1000):
-    for y in xrange(start_digit + 1, 1000):
-      for z in xrange(start_digit + 2, 1000):
-        if x + y + z == 1000 and x**2 + y**2 == z**2:
-          found = True
-          answer = x * y * z
-          print(x)
-          print(y)
-          print(z)
-        if found or x + y + z >  1000:
-          break 
-      if found:
-        break
+for a in reversed(range(333)):
+    b = a + 1
+    c = 1000 - a - b
+    
+    while b < c:
+        if a**2 + b**2 == c**2:
+            found = True
+            answer = a * b * c
+            print "%d, %d, %d" %(a, b, c)
+            break
+    
+        b += 1
+        c -= 1
+    
     if found:
-      break
-  if found:
-     break
-  start_digit = start_digit - 1
+        break
 
-print(answer)
+print answer
